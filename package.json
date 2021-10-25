@@ -11,8 +11,8 @@
     "concurrently":  "6.3.0"
   },
   "scripts": {
-    "backend": "cd client && npm start",
-    "backSetup": "cd client && npm install && npm run build ",
+    "backend": "cd server && npm start",
+    "backSetup": "cd server && npm install && npm run build ",
     "dev": "npm run backend",
     "heroku-postbuild": " npm run backSetup" 
   },

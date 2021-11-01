@@ -2,8 +2,8 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const cors = require('cors'); 
 const knex = require('knex'); 
-const register = require('./controllers/register');
-const signIn = require('./controllers/signin');
+const register = require('./controllers/Register');
+const signIn = require('./controllers/signIn');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -25,9 +25,9 @@ app.get('/',(req,res) => {
   res.json(db.users);
 });
 
-app.post('/signin', signIn.handleSignIn(db,bcrypt));
+app.post('/signIn', signIn.handleSignIn(db,bcrypt));
 
-app.post('/register',(req,res) => register.handleRegister(req,res,db,bcrypt));
+app.post('/Register',(req,res) => register.handleRegister(req,res,db,bcrypt));
 
 app.listen(PORT,() => {
   console.log(`Postalot is running on port ${PORT}`);

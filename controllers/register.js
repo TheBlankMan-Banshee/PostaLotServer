@@ -10,16 +10,16 @@ const handleRegister = (req,res,db,bcrypt) => {
     });
     db.transaction(trx => { // transaction knex function
         trx.insert({
-            hash: hashed,
-            email: email
+            PasswordHash: hashed,
+            Email: email
         })
         .into('UserLogin')
-        .returning('email')
+        .returning('Email')
         .then(loginmail => {
-           trx('users').returning('*').insert({ 
-                email: loginmail[0],
-                name: name,
-                joined: new Date()
+           trx('UserLogin').returning('*').insert({ 
+                Email: loginmail[0],
+                Username: name,
+                IsActive: true
             })
             .then(user => {
                 res.json(user[0]);

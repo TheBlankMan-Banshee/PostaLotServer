@@ -11,7 +11,9 @@ const handleRegister = (req,res,db,bcrypt) => {
     db.transaction(trx => { // transaction knex function
         trx.insert({
             PasswordHash: hashed,
-            Email: email
+            Email: email,
+            Username: name,
+            IsActive: true
         })
         .into('UserLogin')
         .returning('Email')

@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const cors = require('cors'); 
 const knex = require('knex'); 
 const register = require('./controllers/register');
-const signIn = require('./controllers/signIn');
+const signIn = require('./controllers/signin');
 
 const app = express();
 const PORT = process.env.PORT || 5000;

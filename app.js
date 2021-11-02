@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(function(req,res,next){
-  res.header("Access-Control-Allow_Origin", "https://www.postalot-client.herokuapp.com");
+  res.header("Access-Control-Allow_Origin", "https://postalot-client.herokuapp.com");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 }); 

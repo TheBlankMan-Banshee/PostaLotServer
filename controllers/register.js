@@ -14,7 +14,8 @@ const handleRegister = (req,res,db,bcrypt) => {
             Username: name,
             Email: email,
             PasswordHash: hashed,
-            IsActive: true
+            IsActive: true,
+            JoinedDate: new Date()
         })
         .into('UserLogin')
         .returning('Email')
@@ -22,7 +23,8 @@ const handleRegister = (req,res,db,bcrypt) => {
            trx('UserLogin').returning('*').insert({ 
                 Email: loginmail[0],
                 Username: name,
-                IsActive: 'true'
+                IsActive: true,
+                JoinedDate: new Date()
             })
             .then(user => {
                 res.json(user[0]);

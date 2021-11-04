@@ -22,7 +22,7 @@ const handleRegister = (req,res,db,bcrypt) => {
            trx('UserLogin').returning('*').insert({ 
                 Email: loginmail[0],
                 Username: name,
-                IsActive: true
+                IsActive: 'true'
             })
             .then(user => {
                 res.json(user[0]);

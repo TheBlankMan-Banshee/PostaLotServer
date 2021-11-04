@@ -26,6 +26,7 @@ const handleRegister = (req,res,db,bcrypt) => {
             })
             .then(user => {
                 res.json(user[0]);
+                console.log('Registered successfully!')
             })
             .then(trx.commit)
             .catch(trx.rollback); 

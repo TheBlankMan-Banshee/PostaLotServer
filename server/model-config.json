@@ -39,7 +39,7 @@
     "dataSource": "db",
     "public": true
   },
-  "photo": {
+  "Photo": {
     "dataSource": "db",
     "public": true
   },
@@ -64,6 +64,10 @@
     "public": true
   },
   "PhotoShareRelationship": {
+    "dataSource": "db",
+    "public": true
+  },
+  "user": {
     "dataSource": "db",
     "public": true
   }

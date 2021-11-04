@@ -1,20 +1,27 @@
 {
-  "name": "Photo",
+  "name": "user",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "PhotoID": {
-      "type": "string",
-      "required": true
-    },
     "UserID": {
+      "type": "number",
+      "required": true
+    },
+    "Username": {
       "type": "string",
       "required": true
     },
-    "StorageURL": {
+    "FirstName": {
+      "type": "string",
+      "required": true
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "Email": {
       "type": "string",
       "required": true
     },
@@ -23,7 +30,7 @@
       "required": true,
       "default": true
     },
-    "PostDate": {
+    "JoinedDate": {
       "type": "date",
       "required": true
     }

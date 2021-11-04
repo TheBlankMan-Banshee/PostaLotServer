@@ -1,0 +1,26 @@
+{
+  "name": "ShareRelationship",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ShareRelationshipID": {
+      "type": "number",
+      "required": true
+    },
+    "UserID": {
+      "type": "number",
+      "required": true
+    },
+    "IsActive": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

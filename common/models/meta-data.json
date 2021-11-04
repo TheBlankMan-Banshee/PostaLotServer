@@ -1,0 +1,36 @@
+{
+  "name": "MetaData",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "MetaDataID": {
+      "type": "number",
+      "required": true
+    },
+    "PhotoID": {
+      "type": "number",
+      "required": true
+    },
+    "UserID": {
+      "type": "number",
+      "required": true
+    },
+    "Geolocation": {
+      "type": "geopoint"
+    },
+    "CaptureDate": {
+      "type": "date",
+      "required": true
+    },
+    "TagString": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

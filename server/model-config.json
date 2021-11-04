@@ -34,5 +34,37 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "UserLogin": {
+    "dataSource": "db",
+    "public": true
+  },
+  "photo": {
+    "dataSource": "db",
+    "public": true
+  },
+  "MetaData": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ShareRelationship": {
+    "dataSource": "db",
+    "public": true
+  },
+  "PhotosInAlbum": {
+    "dataSource": "db",
+    "public": true
+  },
+  "album": {
+    "dataSource": "db",
+    "public": true
+  },
+  "AlbumShareRelationship": {
+    "dataSource": "db",
+    "public": true
+  },
+  "PhotoShareRelationship": {
+    "dataSource": "db",
+    "public": true
   }
 }

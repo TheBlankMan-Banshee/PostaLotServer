@@ -1,0 +1,35 @@
+{
+  "name": "photo",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "PhotoID": {
+      "type": "string",
+      "required": true
+    },
+    "UserID": {
+      "type": "string",
+      "required": true
+    },
+    "StorageURL": {
+      "type": "string",
+      "required": true
+    },
+    "IsActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "PostDate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

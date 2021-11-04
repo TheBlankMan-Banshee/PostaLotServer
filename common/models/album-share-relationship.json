@@ -1,0 +1,22 @@
+{
+  "name": "AlbumShareRelationship",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ShareRelationshipID": {
+      "type": "number",
+      "required": true
+    },
+    "AlbumID": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

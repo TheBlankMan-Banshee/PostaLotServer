@@ -1,0 +1,22 @@
+{
+  "name": "PhotoShareRelationship",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ShareRelationshipID": {
+      "type": "number",
+      "required": true
+    },
+    "PhotoID": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

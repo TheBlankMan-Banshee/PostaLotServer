@@ -1,0 +1,26 @@
+{
+  "name": "PhotosInAlbum",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "PhotosInAlbumID": {
+      "type": "number",
+      "required": true
+    },
+    "AlbumID": {
+      "type": "number",
+      "required": true
+    },
+    "PhotoID": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

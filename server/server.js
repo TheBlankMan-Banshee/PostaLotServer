@@ -33,7 +33,7 @@ boot(app, __dirname, function(err) {
     app.start();
 });
 
-app.models.user.afterRemote('create', (ctx, user, next)=>{
+app.models.User.afterRemote('create', (ctx, user, next)=>{
   console.log("New User is ", user);
   app.models.Userlogin.create({
     Username: user.Username,
@@ -41,7 +41,7 @@ app.models.user.afterRemote('create', (ctx, user, next)=>{
     IsActive: user.IsActive,
     PasswordHash : user.Password
   }, (err, result) => {
-    if(!err &&result){
+    if(!err && result){
       console.log("Created New UserLogin Entry", result);
     }else{
       console.log("There is an error", err);

@@ -4,3 +4,10 @@
 "email": "jklerck1998@gmail.com",
 "password": "test",
 "IsActive":"true"}
+
+
+,
+  "user": {
+    "dataSource": "db",
+    "public": true
+  }

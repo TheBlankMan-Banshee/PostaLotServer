@@ -18,8 +18,8 @@
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^4.0.0",
     "loopback-component-explorer": "^6.2.0",
-    "loopback": "^3.22.0", 
-    "semver":"^7.3.5"
+    "loopback": "^3.22.0",
+    "semver": "^7.3.5"
   },
   "devDependencies": {
     "eslint": "^3.17.1",

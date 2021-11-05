@@ -8,13 +8,13 @@
   "properties": {
     "UserLoginID": {
       "type": "number",
-      "required": true
+      "required": false
     },
     "Username": {
       "type": "string",
       "required": true
     },
-    "Email": {
+    "email": {
       "type": "string",
       "required": true
     },

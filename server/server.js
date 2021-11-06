@@ -3,7 +3,9 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 'use strict';
+
 
 const loopback = require('loopback');
 const boot = require('loopback-boot');

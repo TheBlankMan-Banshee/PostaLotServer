@@ -5,17 +5,23 @@
 "password": "test",
 "IsActive":"true"}
 
-{"UserID":"01",
-"Username":"Blankman",
-"FirstName": "John",
-"LastName": "Klerck",
-"Email": "jklerck1998@gmail.com",
+//User this one
+{
+"username":"Blankman",
+"firstname": "John",
+"lastname": "Klerck",
+"email": "jklerck1998@gmail.com",
 "password": "test",
-"IsActive":"true",
-"JoinedDate":"2021-11-06"}
+"isactive":"true",
+"joineddate":"2021-11-06"}
 
 ,
   "user": {
     "dataSource": "db",
     "public": true
+  }
+
+,
+  "User": {
+    "dataSource": "db"
   }

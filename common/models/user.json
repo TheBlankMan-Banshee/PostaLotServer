@@ -1,11 +1,13 @@
 {
   "name": "user",
   "base": "User",
+  
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
+    "realm": false,
     "id": {
       "type": "number",
       "required": true
@@ -36,7 +38,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "photos": {
+      "type": "hasMany",
+      "model": "Photo",
+      "foreignKey": ""
+    },
+    "metadata": {
+      "type": "hasMany",
+      "model": "MetaData",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

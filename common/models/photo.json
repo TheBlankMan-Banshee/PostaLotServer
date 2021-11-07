@@ -29,7 +29,23 @@
     }
   },
   "validations": [],
-  "relations":{},
+  "relations": {
+    "userphoto": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userid"
+    },
+    "photosInAlbums": {
+      "type": "hasAndBelongsToMany",
+      "model": "PhotosInAlbum",
+      "foreignKey": ""
+    },
+    "metadata": {
+      "type": "hasOne",
+      "model": "user",
+      "foreignKey": "userid"
+    }
+  },
   "acls": [],
   "methods": {}
 }

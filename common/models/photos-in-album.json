@@ -20,7 +20,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "photos": {
+      "type": "hasMany",
+      "model": "Photo",
+      "foreignKey": "photoid"
+    }
+  },
   "acls": [],
   "methods": {}
 }

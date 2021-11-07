@@ -14,58 +14,58 @@
     ]
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "postgres",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "postgres",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "postgres",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "postgres",
     "public": false
   },
   "UserLogin": {
-    "dataSource": "db",
+    "dataSource": "postgres",
     "public": true
   },
   "Photo": {
-    "dataSource": "db",
+    "dataSource": "postgres",
     "public": true
   },
   "MetaData": {
-    "dataSource": "db",
+    "dataSource": "postgres",
     "public": true
   },
   "ShareRelationship": {
-    "dataSource": "db",
+    "dataSource": "postgres",
     "public": true
   },
   "PhotosInAlbum": {
-    "dataSource": "db",
+    "dataSource": "postgres",
     "public": true
   },
   "album": {
-    "dataSource": "db",
+    "dataSource": "postgres",
     "public": true
   },
   "AlbumShareRelationship": {
-    "dataSource": "db",
+    "dataSource": "postgres",
     "public": true
   },
   "PhotoShareRelationship": {
-    "dataSource": "db",
+    "dataSource": "postgres",
     "public": true
   },
   "user": {
-    "dataSource": "db",
+    "dataSource": "postgres",
     "public": true
   }
 }

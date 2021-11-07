@@ -5,7 +5,7 @@
 "password": "test",
 "IsActive":"true"}
 
-//User this one
+//Use this one
 {
 "username":"Blankman",
 "firstname": "John",

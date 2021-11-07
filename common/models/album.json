@@ -29,7 +29,14 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "photos": {
+      "type": "hasMany",
+      "model": "Photo",
+      "foreignKey": "albumid",
+      "through": "PhotosInAlbum"
+    }
+  },
   "acls": [],
   "methods": {}
 }

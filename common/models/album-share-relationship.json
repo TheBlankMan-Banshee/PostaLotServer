@@ -6,11 +6,11 @@
     "validateUpsert": true
   },
   "properties": {
-    "ShareRelationshipID": {
+    "sharerelationshipid": {
       "type": "number",
       "required": true
     },
-    "AlbumID": {
+    "albumid": {
       "type": "number",
       "required": true
     }

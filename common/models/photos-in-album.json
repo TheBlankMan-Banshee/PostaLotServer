@@ -6,15 +6,15 @@
     "validateUpsert": true
   },
   "properties": {
-    "PhotosInAlbumID": {
+    "photosinalbumid": {
       "type": "number",
       "required": true
     },
-    "AlbumID": {
+    "albumid": {
       "type": "number",
       "required": true
     },
-    "PhotoID": {
+    "photoid": {
       "type": "number",
       "required": true
     }

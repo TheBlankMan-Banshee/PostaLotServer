@@ -6,11 +6,11 @@
     "validateUpsert": true
   },
   "properties": {
-    "UserLoginID": {
+    "userloginid": {
       "type": "number",
       "required": false
     },
-    "Username": {
+    "username": {
       "type": "string",
       "required": true
     },
@@ -18,11 +18,11 @@
       "type": "string",
       "required": true
     },
-    "PasswordHash": {
+    "passwordhash": {
       "type": "string",
       "required": true
     },
-    "IsActive": {
+    "isactive": {
       "type": "boolean",
       "required": true,
       "default": true

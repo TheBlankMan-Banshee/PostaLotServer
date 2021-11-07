@@ -1,21 +1,28 @@
 {
-  "name": "album",
-  "base": "PersistedModel",
+  "name": "user",
+  "base": "User",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "albumid": {
+    "userID": {
       "type": "number",
       "required": true
     },
-    "albumname": {
+    "username": {
       "type": "string",
       "required": true
     },
-    "userid": {
-      "type": "number",
+    "firstname": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
       "required": true
     },
     "isactive": {
@@ -23,7 +30,7 @@
       "required": true,
       "default": true
     },
-    "createddate": {
+    "joineddate": {
       "type": "date",
       "required": true
     }

@@ -6,24 +6,24 @@
     "validateUpsert": true
   },
   "properties": {
-    "PhotoID": {
+    "photoid": {
       "type": "string",
       "required": true
     },
-    "UserID": {
+    "userid": {
       "type": "string",
       "required": true
     },
-    "StorageURL": {
+    "atorageurl": {
       "type": "string",
       "required": true
     },
-    "IsActive": {
+    "isactive": {
       "type": "boolean",
       "required": true,
       "default": true
     },
-    "PostDate": {
+    "postdate": {
       "type": "date",
       "required": true
     }

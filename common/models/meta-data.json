@@ -6,26 +6,26 @@
     "validateUpsert": true
   },
   "properties": {
-    "MetaDataID": {
+    "metadataid": {
       "type": "number",
       "required": true
     },
-    "PhotoID": {
+    "photoid": {
       "type": "number",
       "required": true
     },
-    "UserID": {
+    "userid": {
       "type": "number",
       "required": true
     },
-    "Geolocation": {
+    "geolocation": {
       "type": "geopoint"
     },
-    "CaptureDate": {
+    "capturedate": {
       "type": "date",
       "required": true
     },
-    "TagString": {
+    "tagstring": {
       "type": "string"
     }
   },

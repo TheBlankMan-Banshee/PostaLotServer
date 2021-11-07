@@ -6,11 +6,11 @@
     "validateUpsert": true
   },
   "properties": {
-    "ShareRelationshipID": {
+    "sharerelationshipid": {
       "type": "number",
       "required": true
     },
-    "PhotoID": {
+    "photoid": {
       "type": "number",
       "required": true
     }

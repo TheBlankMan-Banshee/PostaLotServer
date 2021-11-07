@@ -3,7 +3,7 @@
     "name": "db",
     "connector": "memory"
   },
-  "postgres":{
+  "postgres": {
     "host": "ec2-176-34-168-83.eu-west-1.compute.amazonaws.com",
     "port": 5432,
     "database": "dbum9hfnumq1r7",
@@ -11,6 +11,6 @@
     "password": "71432c0b06b86fe8c487be008bef8429f946cb6fb5298cd18ebfb0cfa2f6b2ea",
     "name": "postgres",
     "connector": "postgresql",
-    "ssl":"true"
+    "ssl": "true"
   }
 }

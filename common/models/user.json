@@ -2,7 +2,6 @@
   "name": "user",
   "base": "User",
   
-  "idInjection": true,
   "options": {
     "validateUpsert": true
   },
@@ -42,21 +41,7 @@
   },
   "validations": [],
   "relations": {
-    "photos": {
-      "type": "hasMany",
-      "model": "Photo",
-      "foreignKey": ""
-    },
-    "metadata": {
-      "type": "hasMany",
-      "model": "MetaData",
-      "foreignKey": ""
-    },
-    "Album": {
-      "type": "hasMany",
-      "model": "Album",
-      "foreignKey": ""
-    }
+    
   },
   "acls": [],
   "methods": {}

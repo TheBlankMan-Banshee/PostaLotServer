@@ -25,3 +25,72 @@
   "User": {
     "dataSource": "db"
   }
+//from user
+"idInjection": true,
+"photos": {
+      "type": "hasMany",
+      "model": "Photo",
+      "foreignKey": ""
+    },
+    "metadata": {
+      "type": "hasMany",
+      "model": "MetaData",
+      "foreignKey": ""
+    },
+    "Album": {
+      "type": "hasMany",
+      "model": "Album",
+      "foreignKey": ""
+    }
+
+//from photos    
+  "userphoto": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "photosInAlbums": {
+      "type": "hasAndBelongsToMany",
+      "model": "PhotosInAlbum",
+      "foreignKey": ""
+    },
+    "metadata": {
+      "type": "hasOne",
+      "model": "metadata",
+      "foreignKey": ""
+    }
+
+ property   
+  "idInjection": true,
+
+//from album 
+"photos": {
+      "type": "hasMany",
+      "model": "Photo",
+      "foreignKey": "albumid",
+      "through": "PhotosInAlbum"
+    },
+    "user":{
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey":"userid"
+    }
+
+//from photosInAlbums
+"photos": {
+      "type": "hasMany",
+      "model": "Photo",
+      "foreignKey": "photoid"
+    }
+
+//from metadata
+"metadataphoto": {
+      "type": "belongsTo",
+      "model": "Photo",
+      "foreignKey": "photoid"
+    },
+    "metadatauser": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userid"
+    }

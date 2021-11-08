@@ -1,17 +1,16 @@
 {
   "name": "Photo",
   "base": "PersistedModel",
-  "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
     "id": {
-      "type": "string",
+      "type": "number",
       "required": false
     },
     "userid": {
-      "type": "string",
+      "type": "number",
       "required": true
     },
     "storageurl": {
@@ -30,21 +29,7 @@
   },
   "validations": [],
   "relations": {
-    "userphoto": {
-      "type": "belongsTo",
-      "model": "user",
-      "foreignKey": "userid"
-    },
-    "photosInAlbums": {
-      "type": "hasAndBelongsToMany",
-      "model": "PhotosInAlbum",
-      "foreignKey": ""
-    },
-    "metadata": {
-      "type": "hasOne",
-      "model": "user",
-      "foreignKey": "userid"
-    }
+    
   },
   "acls": [],
   "methods": {}

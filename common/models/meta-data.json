@@ -31,16 +31,7 @@
   },
   "validations": [],
   "relations": {
-    "metadataphoto": {
-      "type": "belongsTo",
-      "model": "Photo",
-      "foreignKey": "photoid"
-    },
-    "metadatauser": {
-      "type": "belongsTo",
-      "model": "user",
-      "foreignKey": "userid"
-    }
+    
   },
   "acls": [],
   "methods": {}

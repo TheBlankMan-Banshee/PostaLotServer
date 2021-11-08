@@ -52,7 +52,7 @@
     "dataSource": "postgres",
     "public": true
   },
-  "album": {
+  "Album": {
     "dataSource": "postgres",
     "public": true
   },

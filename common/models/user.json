@@ -8,6 +8,9 @@
   },
   "properties": {
     "realm": false,
+    "emailVerified":false,
+    "verificationToken":false,
+    "userid":false,
     "id": {
       "type": "number",
       "required": true
@@ -47,6 +50,11 @@
     "metadata": {
       "type": "hasMany",
       "model": "MetaData",
+      "foreignKey": ""
+    },
+    "Album": {
+      "type": "hasMany",
+      "model": "Album",
       "foreignKey": ""
     }
   },

@@ -1,5 +1,5 @@
 {
-  "name": "album",
+  "name": "Album",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -35,6 +35,11 @@
       "model": "Photo",
       "foreignKey": "albumid",
       "through": "PhotosInAlbum"
+    },
+    "user":{
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey":"userid"
     }
   },
   "acls": [],

@@ -6,15 +6,15 @@
     "validateUpsert": true
   },
   "properties": {
-    "photoid": {
+    "id": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "userid": {
       "type": "string",
       "required": true
     },
-    "atorageurl": {
+    "storageurl": {
       "type": "string",
       "required": true
     },

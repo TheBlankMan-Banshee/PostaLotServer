@@ -6,7 +6,7 @@
     "validateUpsert": true
   },
   "properties": {
-    "albumid": {
+    "id": {
       "type": "number",
       "required": true
     },

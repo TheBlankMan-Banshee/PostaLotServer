@@ -6,7 +6,7 @@
     "validateUpsert": true
   },
   "properties": {
-    "sharerelationshipid": {
+    "id": {
       "type": "number",
       "required": true
     },

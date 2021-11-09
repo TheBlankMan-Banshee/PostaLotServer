@@ -28,9 +28,22 @@
     }
   },
   "validations": [],
-  "relations": {
-    
-  },
+  "relations": {},
   "acls": [],
-  "methods": {}
+  "methods": {
+    "Photo.getViewablePhotos":{
+      "accepts":[
+        {"arg": "userid", "type":"number"}
+      ],
+      "returns":[],
+      "http": {
+        "verb":"get",
+        "path":"/findAll",
+        "status": {"status": 200},
+        "errorStatus": {"status": 400}
+      },
+      "accessScopes":["default"], 
+      "description":"Fetches all photos that a user has access to"
+    }
+  }
 }

@@ -2,4 +2,5 @@
 
 module.exports = function(Photo) {
 
+    // Photo.getViewablePhotos = function(userid,)
 };

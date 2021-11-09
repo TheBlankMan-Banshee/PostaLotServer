@@ -9,12 +9,12 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const loopback = require('loopback');
 const boot = require('loopback-boot');
-
+const PORT = process.env.PORT;
 const app = module.exports = loopback();
 
 app.start = function() {
   // start the web server
-  return app.listen(function() {
+  return app.listen(PORT || 3000, function() {
     app.emit('started');
     const baseUrl = app.get('url').replace(/\/$/, '');
     console.log('Web server listening at: %s', baseUrl);

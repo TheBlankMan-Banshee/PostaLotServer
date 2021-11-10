@@ -2,5 +2,5 @@
 
 module.exports = function(Photo) {
 
-    // Photo.getViewablePhotos = function(userid,)
+    //Photo.getViewablePhotos({"where": {"userid" : userid }}), function(err, Photo) 
 };

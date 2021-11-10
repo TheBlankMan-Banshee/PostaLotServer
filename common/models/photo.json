@@ -38,7 +38,7 @@
       "returns":[],
       "http": {
         "verb":"get",
-        "path":"/findAll",
+        "path":"/findAll/{userid}",
         "status": {"status": 200},
         "errorStatus": {"status": 400}
       },

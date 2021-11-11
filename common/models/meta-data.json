@@ -6,7 +6,7 @@
     "validateUpsert": true
   },
   "properties": {
-    "metadataid": {
+    "id": {
       "type": "number",
       "required": true
     },
@@ -30,9 +30,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

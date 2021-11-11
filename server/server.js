@@ -42,7 +42,7 @@ app.models.Album.afterRemote('fetch', (ctx, album, next) => {
   }, (err, result) => {
     if (!err && result){
       app.models.photo.get ({
-        id : result.id
+        id : result.photoid
       }, (err, result) =>{
         if (!err && result){
           console.log("Photos returned: ", result);

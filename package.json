@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "start": "node .",
     "posttest": "npm run lint",
-    "postinstall": "npm run build"
+    "postinstall": "npm install"
   },
   "dependencies": {
     "compression": "^1.0.3",

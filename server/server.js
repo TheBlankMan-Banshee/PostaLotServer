@@ -36,62 +36,63 @@ boot(app, __dirname, function(err) {
 });
 
 
-app.models.Album.afterRemote('fetch', (ctx, album, next) => {
-  app.models.PhotosInAlbum.get ({
-    albumid : album.id
-  }, (err, result) => {
-    if (!err && result){
-      app.models.photo.get ({
-        id : result.photoid
-      }, (err, result) =>{
-        if (!err && result){
-          console.log("Photos returned: ", result);
-        }else{
-          console.log("There is an error", err);
-        }
-      })
-    }else{
-      console.log("No photos in album", err);
-    }
-  })
-  next();
-});
+// app.models.Album.afterRemote('fetch', (ctx, album, next) => {
+//   app.models.PhotosInAlbum.get ({
+//     albumid : album.id
+//   }, (err, result) => {
+//     if (!err && result){
+//       app.models.photo.get ({
+//         id : result.photoid
+//       }, (err, result) =>{
+//         if (!err && result){
+//           console.log("Photos returned: ", result);
+//         }else{
+//           console.log("There is an error", err);
+//         }
+//       })
+//     }else{
+//       console.log("No photos in album", err);
+//     }
+//   })
+//   next();
+// });
 
-app.models.MetaData.afterRemote('fetch', (ctx, Metadata, next) => {
-  app.models.photo.get ({
-    id : Metadata.photoid
-  }, (err, result) => {
-    if (!err && result){
-      console.log("Photos returned: ", result);
-    }else{
-      console.log("There is an error", err);
-    }
-  })
-  next();
-});
+// app.models.MetaData.afterRemote('fetch', (ctx, Metadata, next) => {
+//   app.models.photo.get ({
+//     id : Metadata.photoid
+//   }, (err, result) => {
+//     if (!err && result){
+//       console.log("Photos returned: ", result);
+//     }else{
+//       console.log("There is an error", err);
+//     }
+//   })
+//   next();
+// });
 
-var WHITE_LIST_FIELDS =['photoid'];
-app.models.MetaData.afterRemote('fetch', (ctx, Metadata, next) => {
-  if(ctx.result){
-    if (Array.isArray(Metadata)){
-      var answer = [];
-      ctx.result.forEach(function (result){
-        var replacement ={};
-        WHITE_LIST_FIELDS.forEach(function(field){
-          replacement[field]=result[field];
-        });
-        answer.push(replacement);
-      });
-    }else{
-      var answer = {};
-      WHITE_LIST_FIELDS.forEach(function(field){
-        answer[field] = ctx.result[field];
-      });
-    }
-    ctx.result = answer;
-  }
-  next();
-});
+// var WHITE_LIST_FIELDS =['photoid'];
+// app.models.MetaData.afterRemote('fetch', (ctx, Metadata, next) => {
+//   if(ctx.result){
+//     if (Array.isArray(Metadata)){
+//       var answer = [];
+//       ctx.result.forEach(function (result){
+//         var replacement ={};
+//         WHITE_LIST_FIELDS.forEach(function(field){
+//           replacement[field]=result[field];
+//         });
+//         answer.push(replacement);
+//       });
+//     }else{
+//       var answer = {};
+//       WHITE_LIST_FIELDS.forEach(function(field){
+//         answer[field] = ctx.result[field];
+//       });
+//     }
+//     ctx.result = answer;
+//   }
+//   next();
+// });
+
 // app.models.user.afterRemote('create', (ctx, user, next)=>{
 //   console.log("New User is ", user);
 //   app.models.UserLogin.create({

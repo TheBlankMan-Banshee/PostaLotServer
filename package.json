@@ -8,8 +8,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node .",
-    "posttest": "npm run lint",
-    "postinstall": "npm install"
+    "posttest": "npm run lint"
   },
   "dependencies": {
     "compression": "^1.0.3",

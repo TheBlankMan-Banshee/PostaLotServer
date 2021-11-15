@@ -44,10 +44,6 @@
     "dataSource": "postgres",
     "public": true
   },
-  "ShareRelationship": {
-    "dataSource": "postgres",
-    "public": true
-  },
   "PhotosInAlbum": {
     "dataSource": "postgres",
     "public": true

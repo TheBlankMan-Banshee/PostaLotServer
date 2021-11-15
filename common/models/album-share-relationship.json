@@ -13,6 +13,10 @@
     "albumid": {
       "type": "number",
       "required": true
+    }, 
+    "userid":{
+      "type":"number",
+      "required": true
     }
   },
   "validations": [],

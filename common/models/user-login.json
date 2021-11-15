@@ -10,22 +10,13 @@
       "type": "number",
       "required": false
     },
-    "username": {
-      "type": "string",
+    "userid": {
+      "type": "number",
       "required": true
     },
-    "email": {
-      "type": "string",
+    "logindate": {
+      "type": "date",
       "required": true
-    },
-    "passwordhash": {
-      "type": "string",
-      "required": true
-    },
-    "isactive": {
-      "type": "boolean",
-      "required": true,
-      "default": true
     }
   },
   "validations": [],

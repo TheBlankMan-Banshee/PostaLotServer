@@ -1,0 +1,49 @@
+{
+  "name": "Photo",
+  "base": "PersistedModel",
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": false
+    },
+    "userid": {
+      "type": "number",
+      "required": true
+    },
+    "storageurl": {
+      "type": "string",
+      "required": true
+    },
+    "isactive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "postdate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "Photo.getViewablePhotos":{
+      "accepts":[
+        {"arg": "userid", "type":"number"}
+      ],
+      "returns":[],
+      "http": {
+        "verb":"get",
+        "path":"/findAll/{userid}",
+        "status": {"status": 200},
+        "errorStatus": {"status": 400}
+      },
+      "accessScopes":["default"], 
+      "description":"Fetches all photos that a user has access to"
+    }
+  }
+}

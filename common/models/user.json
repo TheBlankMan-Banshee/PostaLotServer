@@ -1,0 +1,46 @@
+{
+  "name": "user",
+  "base": "User",
+  
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "realm": false,
+    "emailVerified":false,
+    "verificationToken":false,
+    "userid":false,
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "firstname": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "isactive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "joineddate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

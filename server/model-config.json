@@ -1,0 +1,71 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "postgres",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "UserLogin": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Photo": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "MetaData": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "ShareRelationship": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "PhotosInAlbum": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Album": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "AlbumShareRelationship": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "PhotoShareRelationship": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "user": {
+    "dataSource": "postgres",
+    "public": true
+  }
+}

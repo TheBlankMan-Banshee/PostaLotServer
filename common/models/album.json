@@ -1,0 +1,35 @@
+{
+  "name": "Album",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "albumname": {
+      "type": "string",
+      "required": true
+    },
+    "userid": {
+      "type": "number",
+      "required": true
+    },
+    "isactive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "createddate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

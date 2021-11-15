@@ -35,65 +35,7 @@ boot(app, __dirname, function(err) {
     app.start();
 });
 
-
-// app.models.Album.afterRemote('fetch', (ctx, album, next) => {
-//   app.models.PhotosInAlbum.get ({
-//     albumid : album.id
-//   }, (err, result) => {
-//     if (!err && result){
-//       app.models.photo.get ({
-//         id : result.photoid
-//       }, (err, result) =>{
-//         if (!err && result){
-//           console.log("Photos returned: ", result);
-//         }else{
-//           console.log("There is an error", err);
-//         }
-//       })
-//     }else{
-//       console.log("No photos in album", err);
-//     }
-//   })
-//   next();
-// });
-
-// app.models.MetaData.afterRemote('fetch', (ctx, Metadata, next) => {
-//   app.models.photo.get ({
-//     id : Metadata.photoid
-//   }, (err, result) => {
-//     if (!err && result){
-//       console.log("Photos returned: ", result);
-//     }else{
-//       console.log("There is an error", err);
-//     }
-//   })
-//   next();
-// });
-
-// var WHITE_LIST_FIELDS =['photoid'];
-// app.models.MetaData.afterRemote('fetch', (ctx, Metadata, next) => {
-//   if(ctx.result){
-//     if (Array.isArray(Metadata)){
-//       var answer = [];
-//       ctx.result.forEach(function (result){
-//         var replacement ={};
-//         WHITE_LIST_FIELDS.forEach(function(field){
-//           replacement[field]=result[field];
-//         });
-//         answer.push(replacement);
-//       });
-//     }else{
-//       var answer = {};
-//       WHITE_LIST_FIELDS.forEach(function(field){
-//         answer[field] = ctx.result[field];
-//       });
-//     }
-//     ctx.result = answer;
-//   }
-//   next();
-// });
-
-app.models.user.afterRemote('get', (ctx, user, next)=>{
+app.models.user.afterRemote('fetch', (ctx, user, next)=>{
   console.log(user, " Logged in");
   app.models.UserLogin.create({
     userid: user.id,
@@ -108,19 +50,52 @@ app.models.user.afterRemote('get', (ctx, user, next)=>{
   next();
 });
 
-// app.models.user.afterRemote('update', (ctx, user, next)=>{
-//   console.log("Updated User is ", user);
-//   app.models.UserLogin.update({
-//     username: user.username,
-//     email: user.email,
-//     isactive: user.isactive,
-//     PasswordHash : user.password
-//   }, (err, result) => {
-//     if(!err && result){
-//       console.log("Updated UserLogin Entry", result);
-//     }else{
-//       console.log("There is an error", err);
-//     }
-//   })
-//   next();
-// });
+app.models.user.beforeRemote('delete', (ctx, user, next)=>{
+  console.log("User to be deleted is ", user);
+
+  app.models.AlbumShareRelationship.delete({
+    userid:user.id
+  }, (err, result) => {
+    if(!err && result){
+      console.log("AlbumShareRelationship Deleted", result);
+    }else{
+      console.log("There is an error deleting the AlbumShareRelationship", err);
+    }
+  })
+
+  app.models.PhotoShareRelationship.delete({
+    userid:user.id
+  }, (err, result) => {
+    if(!err && result){
+      console.log("PhotoShareRelationship Deleted", result);
+    }else{
+      console.log("There is an error deleting the PhotoShareRelationship", err);
+    }
+  })
+
+  app.models.Photo.delete({
+    userid:user.id
+  }, (err, result) => {
+    if(!err && result){
+      console.log("Photo Deleted", result);
+    }else{
+      console.log("There is an error deleting the photo", err);
+    }
+  })
+  next();
+});
+
+ app.models.Photo.beforeRemote('delete', (ctx, photo, next)=>{
+   console.log("Photo to be deleted is ", photo);
+
+   app.models.MetaData.delete({
+     photoid: photo.id
+   }, (err, result)=>{
+     if(!err, result){
+       console.log("Photo Deleted ", result);
+     }else{
+       console.log("There is an error deletig the photo", err);
+     }
+   })
+   next();
+ })

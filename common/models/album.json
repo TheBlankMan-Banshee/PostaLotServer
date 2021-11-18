@@ -29,7 +29,25 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userid",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "photos": {
+      "type": "hasMany",
+      "model": "Photo",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "PhotosInAlbum"
+    }
+  },
   "acls": [],
   "methods": {}
 }

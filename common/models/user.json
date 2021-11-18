@@ -1,15 +1,14 @@
 {
   "name": "user",
   "base": "User",
-  
   "options": {
-    "validateUpsert": true
+    "validateUpsert": false
   },
   "properties": {
     "realm": false,
-    "emailVerified":false,
-    "verificationToken":false,
-    "userid":false,
+    "emailVerified": false,
+    "verificationToken": false,
+    "userid": false,
     "id": {
       "type": "number",
       "required": true

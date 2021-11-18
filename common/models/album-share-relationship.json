@@ -13,14 +13,23 @@
     "albumid": {
       "type": "number",
       "required": true
-    }, 
-    "userid":{
-      "type":"number",
+    },
+    "userid": {
+      "type": "number",
       "required": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userid",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

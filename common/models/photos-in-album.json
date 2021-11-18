@@ -21,7 +21,14 @@
   },
   "validations": [],
   "relations": {
-    
+    "album": {
+      "type": "belongsTo",
+      "model": "Album",
+      "foreignKey": "albumid",
+      "options": {
+        "nestRemoting": true
+      }
+    }
   },
   "acls": [],
   "methods": {}

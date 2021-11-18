@@ -28,22 +28,16 @@
     }
   },
   "validations": [],
-  "relations": {},
-  "acls": [],
-  "methods": {
-    "Photo.getViewablePhotos":{
-      "accepts":[
-        {"arg": "userid", "type":"number"}
-      ],
-      "returns":[],
-      "http": {
-        "verb":"get",
-        "path":"/findAll/{userid}",
-        "status": {"status": 200},
-        "errorStatus": {"status": 400}
-      },
-      "accessScopes":["default"], 
-      "description":"Fetches all photos that a user has access to"
+  "relations": {
+    "albums": {
+      "type": "hasAndBelongsToMany",
+      "model": "Album",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
     }
-  }
+  },
+  "acls": [],
+  "methods": {}
 }

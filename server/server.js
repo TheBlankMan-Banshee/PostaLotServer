@@ -38,7 +38,7 @@ boot(app, __dirname, function(err) {
 app.models.Album.beforeRemote('delete', (ctx, album, next)=>{
   console.log(album, " to be deleted");
   app.models.PhotosInAlbum.delete({
-    albmid:album.id
+    albumid:album.id
   }, (err, result)=>{
     if(!err && result){
       console.log ("Photos Deleted from album", result);

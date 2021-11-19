@@ -40,9 +40,9 @@
   },
   "validations": [],
   "relations": {
-    "Photo":{
+    "photo":{
       "type":"hasMany",
-      "model":"Photo"
+      "model":"photo"
     }
   },
   "acls": [],

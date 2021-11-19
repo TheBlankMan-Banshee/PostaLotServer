@@ -36,7 +36,7 @@
     "dataSource": "postgres",
     "public": true
   },
-  "Photo": {
+  "photo": {
     "dataSource": "postgres",
     "public": true
   },

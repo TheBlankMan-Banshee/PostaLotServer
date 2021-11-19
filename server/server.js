@@ -87,7 +87,7 @@ app.models.user.beforeRemote('delete', (ctx, user, next)=>{
     }
   })
 
-  app.models.Photo.delete({
+  app.models.photo.delete({
     userid:user.id
   }, (err, result) => {
     if(!err && result){
@@ -99,7 +99,7 @@ app.models.user.beforeRemote('delete', (ctx, user, next)=>{
   next();
 });
 
- app.models.Photo.beforeRemote('delete', (ctx, photo, next)=>{
+ app.models.photo.beforeRemote('delete', (ctx, photo, next)=>{
    console.log("Photo to be deleted is ", photo);
 
    app.models.MetaData.delete({

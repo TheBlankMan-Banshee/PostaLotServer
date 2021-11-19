@@ -1,5 +1,5 @@
 {
-  "name": "Photo",
+  "name": "photo",
   "base": "PersistedModel",
   "options": {
     "validateUpsert": true
@@ -35,7 +35,7 @@
       "foreignKey": "",
       "options": {
         "nestRemoting": true
-      }
+      }, "through":"PhotosInAlbum"
     },
     "User":{
       "type":"belongsTo",

@@ -46,6 +46,10 @@
         "nestRemoting": true
       },
       "through": "PhotosInAlbum"
+    }, 
+    "photosinalbum":{
+      "type":"hasMany",
+      "model":"PhotosInAlbum"
     }
   },
   "acls": [],

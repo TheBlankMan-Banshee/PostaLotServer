@@ -35,6 +35,20 @@ boot(app, __dirname, function(err) {
     app.start();
 });
 
+app.models.Album.beforeRemote('delete', (ctx, album, next)=>{
+  console.log(album, " to be deleted");
+  app.models.PhotosInAlbum.delete({
+    albmid:album.id
+  }, (err, result)=>{
+    if(!err && result){
+      console.log ("Photos Deleted from album", result);
+    }else{
+      console.log("There was an error deleting photos from the album ", err);
+    }
+  })
+  next();
+})
+
 app.models.user.afterRemote('fetch', (ctx, user, next)=>{
   console.log(user, " Logged in");
   app.models.UserLogin.create({
@@ -73,7 +87,7 @@ app.models.user.beforeRemote('delete', (ctx, user, next)=>{
     }
   })
 
-  app.models.Photo.delete({
+  app.models.photo.delete({
     userid:user.id
   }, (err, result) => {
     if(!err && result){
@@ -85,7 +99,7 @@ app.models.user.beforeRemote('delete', (ctx, user, next)=>{
   next();
 });
 
- app.models.Photo.beforeRemote('delete', (ctx, photo, next)=>{
+ app.models.photo.beforeRemote('delete', (ctx, photo, next)=>{
    console.log("Photo to be deleted is ", photo);
 
    app.models.MetaData.delete({

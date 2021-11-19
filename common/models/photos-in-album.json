@@ -28,6 +28,11 @@
       "options": {
         "nestRemoting": true
       }
+    },
+    "photos":{
+      "type":"hasMany",
+      "model":"photo",
+      "foreignKey":"id"
     }
   },
   "acls": [],

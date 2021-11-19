@@ -39,7 +39,12 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "Photo":{
+      "type":"hasMany",
+      "model":"Photo"
+    }
+  },
   "acls": [],
   "methods": {}
 }

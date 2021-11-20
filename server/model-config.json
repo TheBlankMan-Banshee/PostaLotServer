@@ -63,5 +63,9 @@
   "user": {
     "dataSource": "postgres",
     "public": true
+  },
+  "CloudinaryImage":{
+    "dataSource":"cloudinary",
+    "public": true
   }
 }

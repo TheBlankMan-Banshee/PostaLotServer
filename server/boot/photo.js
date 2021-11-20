@@ -4,24 +4,34 @@
 
 // const { Application } = require("loopback");
 // const { router } = require("../server");
-var express = require('express')
-var router = express.Router()
+
 
 module.exports = function(server){
     const cloudinary = require("cloudinary");
-    cloudinary.config({
-        cloud_name: server.get('cloudinary_name'),
-        api_key: server.get('cloudinary_api_key'),
-        api_secret: server.get('cloudinary_api_secret')
-    });
-    var multer = require('multer');
-    var cloudinaryStorage = require('multer-storage-cloudinary');
-    var storage = cloudinaryStorage({
+    // cloudinary.config({
+    //     cloud_name: server.get('cloudinary_name'),
+    //     api_key: server.get('cloudinary_api_key'),
+    //     api_secret: server.get('cloudinary_api_secret')
+    // });
+    const {CloudinaryStorage} = require('multer-storage-cloudinary');
+    const multer = require('multer');
+    const express = require('express');
+    const app = express();
+    const router = express.Router();
+
+    const storage = new CloudinaryStorage({
         cloudinary: cloudinary,
-        folder: 'images',
-        filename: function (req, file, cb){
-            cb(undefined, file.filename + '-' + Date.now());
+        params: {
+            folder: 'images',
+            format: async (req,res)=> 'png',
+            public_id: (req, file) =>  file.filename + '-' + Date.now(),
         }
+        
+        
+        // allowedFormats: ['jpg', 'jpeg', 'png','tiff','gif'],
+        // filename: function (req, file, cb){
+            
+        
     });
 
     var parser = multer({ storage: storage});

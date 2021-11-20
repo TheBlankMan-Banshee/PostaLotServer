@@ -1,4 +1,7 @@
 {
     "name":"CloudinaryImage",
-    "base":"Model"
+    "base":"Model",
+    "methods":{
+        
+    }
 }

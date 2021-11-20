@@ -1,0 +1,17 @@
+//On Album, get all the photo objects
+
+{"where":
+    {"id":"5"},
+    {"include": "photosinalbum",
+        "scope" :{
+            "include":["photos"]
+        }
+    }
+}
+
+{"include": 
+    "photosinalbum", 
+        "scope" :{
+            "include":["photos"]
+        }
+    }

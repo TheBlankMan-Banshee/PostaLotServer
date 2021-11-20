@@ -35,9 +35,9 @@ boot(app, __dirname, function(err) {
     app.start();
 });
 
-app.models.Album.beforeRemote('delete', (ctx, album, next)=>{
-  console.log(album, " to be deleted");
-  app.models.PhotosInAlbum.delete({
+app.models.Album.observe ('before delete', function(album, next){
+  console.log("Album with id ", album.id, " to be deleted");
+  app.models.PhotosInAlbum.destroyAll({
     albumid:album.id
   }, (err, result)=>{
     if(!err && result){
@@ -46,8 +46,22 @@ app.models.Album.beforeRemote('delete', (ctx, album, next)=>{
       console.log("There was an error deleting photos from the album ", err);
     }
   })
-  next();
-})
+  return next();
+});
+
+// app.models.Album.beforeRemote('delete', (ctx, album, next)=>{
+//   console.log(album, " to be deleted");
+//   app.models.PhotosInAlbum.delete({
+//     albumid:album.id
+//   }, (err, result)=>{
+//     if(!err && result){
+//       console.log ("Photos Deleted from album", result);
+//     }else{
+//       console.log("There was an error deleting photos from the album ", err);
+//     }
+//   })
+//   next();
+// })
 
 app.models.user.afterRemote('fetch', (ctx, user, next)=>{
   console.log(user, " Logged in");

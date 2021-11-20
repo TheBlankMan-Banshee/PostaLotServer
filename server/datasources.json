@@ -12,5 +12,10 @@
     "name": "postgres",
     "connector": "postgresql",
     "ssl": "true"
+  },
+  "cloudinary":{
+    "name":"cloudinary",
+    "connector": "loopback-component-cloudinary",
+    "url":"[API-URL]"
   }
 }

@@ -18,5 +18,8 @@
       "limit": "100kb"
     },
     "cors": false
-  }
+  },
+  "cloudinary_name": "postalot", 
+  "cloudinary_api_key": "525525895127486", 
+  "cloudinary_api_secret": "_FR2e5QNLO2jKXwG9DwezP2zHVY"
 }

@@ -41,6 +41,10 @@
       "type":"belongsTo",
       "model":"user",
       "foreignKey":"userid"
+    },
+    "metadata":{
+      "type":"hasOne",
+      "model":"MetaData"
     }
   },
   "acls": [],

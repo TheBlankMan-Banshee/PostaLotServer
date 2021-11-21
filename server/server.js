@@ -6,6 +6,16 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 'use strict';
 
+// require('@babel/register');
+
+// const express = require('express');
+// const serverMiddleware = require('./src/server').default;
+// const cookiesMiddleware = require('universal-cookie-express');
+
+// app
+//   .use('./assets', express.static('dist'))
+//   .use(cookiesMiddleware())
+//   .use(serverMiddleware);
 
 const loopback = require('loopback');
 const boot = require('loopback-boot');
@@ -48,20 +58,6 @@ app.models.Album.observe ('before delete', function(album, next){
   })
   return next();
 });
-
-// app.models.Album.beforeRemote('delete', (ctx, album, next)=>{
-//   console.log(album, " to be deleted");
-//   app.models.PhotosInAlbum.delete({
-//     albumid:album.id
-//   }, (err, result)=>{
-//     if(!err && result){
-//       console.log ("Photos Deleted from album", result);
-//     }else{
-//       console.log("There was an error deleting photos from the album ", err);
-//     }
-//   })
-//   next();
-// })
 
 app.models.user.afterRemote('fetch', (ctx, user, next)=>{
   console.log(user, " Logged in");
